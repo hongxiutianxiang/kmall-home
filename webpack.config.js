@@ -47,7 +47,7 @@ module.exports = {
         alias:{
             pages:path.resolve(__dirname,'./src/pages'),
             util:path.resolve(__dirname,'./src/util'),
-            api:path.resolve(__dirname,'./src/api'),
+            service:path.resolve(__dirname,'./src/service'),
             common:path.resolve(__dirname,'./src/common'),
             node_modules:path.resolve(__dirname,'./node_modules')
         }
@@ -69,7 +69,7 @@ module.exports = {
             },
 	    //处理图片 
 			{
-				test: /\.(png|jpg|gif|jpeg)$/i,
+				test: /\.(png|jpg|gif|jpeg|ttf|woff2|woff|eot|svg)\??.*$/i,
 				use: [
 			  		{
 			    		loader: 'url-loader',
@@ -105,5 +105,9 @@ module.exports = {
 	devServer:{
 		contentBase: './dist',//内容的目录
 		port:3002,//服务运行的端口
+		proxy: [{
+      		context: ['/user'],
+	      	target: 'http://127.0.0.1:3000',
+	    }]
 	}			
 };

@@ -1,2 +1,18 @@
+
+require('pages/common/footer')
+require('pages/common/logo')
 require('./index.css')
-console.log('456')
+
+var page = {
+	init:function(){
+		this.bindEvent();
+	},
+	bindEvent:function(){
+		
+	}
+}
+
+
+$(function(){
+	page.init();
+})
