@@ -8,6 +8,7 @@ var nav = {
 	init:function(){
 
 		this.bindEvent();
+		this.loadUsername();
 
 		return this;
 	},
@@ -23,6 +24,15 @@ var nav = {
 					_util.showErrorMsg(msg)
 				}
 			)
+		})
+	},
+	loadUsername:function(){
+		_user.getUsername(function(data){
+			$('.not-login').hide();
+			$('.login')
+			.show()
+			.find('.username')
+			.text(data.username)
 		})
 	}
 }

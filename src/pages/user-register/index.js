@@ -27,17 +27,17 @@ var page = {
 	bindEvent:function(){
 		var _this = this;
 		$('#btn-submit').on('click',function(){
-			//1.用户登录
-			_this.submitLogin();
+			//1.用户注册
+			_this.submitRegister();
 		})
 
 		$('input').on('keyup',function(ev){
 			if(ev.keyCode == 13){
-				_this.submitLogin();
+				_this.submitRegister();
 			}
 		})
 	},
-	submitLogin:function(){
+	submitRegister:function(){
 		//1.获取数据
 		var formData = {
 			username:$.trim($('[name="username"]').val()),
@@ -48,7 +48,7 @@ var page = {
 		//3.发送请求
 		if(validateResult.status){//验证通过
 			formErr.hide()
-			_user.login(formData,function(){
+			_user.Register(formData,function(){
 				_util.goHome()
 			},function(msg){
 				formErr.show(msg)

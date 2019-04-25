@@ -32,7 +32,25 @@ var _util = {
 		alert(msg)
 	},
 	goLogin:function(){
-		window.location.herf = './user-login.html'
+		window.location.href = './user-login.html'
+	},
+	goHome:function(){
+		window.location.href = '/'
+	},
+	validate:function(value,type){
+		var value = $.trim(value);
+		//非空验证
+		if(type == 'require'){
+			return !!value
+		}
+		//用户名格式验证
+		if(type == 'username'){
+			return /^[0-9a-zA-Z_]{3,9}$/.test(value)
+		}
+		//密码格式验证
+		if(type == 'password'){
+			return /^[0-9a-zA-Z_]{3,9}$/.test(value)
+		}
 	}
 
 }
