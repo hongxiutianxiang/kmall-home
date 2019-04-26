@@ -28,7 +28,7 @@
 	font-size: 14px;
 	float: left;
 }
-.btn-search{
+.btn.btn-search{
 	height: 42px;
 	line-height: 42px;
 	float: left;

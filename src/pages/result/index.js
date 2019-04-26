@@ -5,9 +5,8 @@ var _util = require('util')
 
 $(function(){
 
-	var query = window.location.search.substr(1);
-	console.log(query)
-	$('.register').show()
+	var type = _util.getParamFromUrl('type') || 'default';
+	$('.'+type).show()
 })
 
 
