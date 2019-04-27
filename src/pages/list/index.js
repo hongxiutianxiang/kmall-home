@@ -7,10 +7,37 @@ require('pages/common/footer')
 require('./index.css')
 
 
-import Swiper from'swiper'
-import 'swiper/dist/css/swiper.min.css' 
-
 var _util = require('util')
-var _user = require('service/user')
-var _side = require('pages/common/side')
+var _product = require('service/product')
+var tpl = require('./index.tpl')
 
+var page = {
+	listParam:{
+		keyword:_util.getParamFromUrl('keyword') || '',
+		categoryId:_util.getParamFromUrl('categoryId') || '',
+	},
+	init:function(){
+		this.loadProductList();
+	},
+	loadProductList:function(){
+		this.listParam.keyword ? (delete this.listParam.categoryId) : (delete this.listParam.keyword)
+		_product.getProductList(this.listParam,function(result){
+			
+			result.list.forEach(function(product){
+				product.image = product.images.split(',')[0]
+			})
+
+			var html = _util.render(tpl,{
+				list:result.list
+			})
+			$('.product-list-box').html(html)
+
+		},function(msg){
+			_util.showErrorMsg(msg)
+		})
+	},
+}
+
+$(function(){
+	page.init();
+})

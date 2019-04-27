@@ -126,7 +126,7 @@ module.exports = {
 		contentBase: './dist',//内容的目录
 		port:3002,//服务运行的端口
 		proxy: [{
-      		context: ['/user'],
+      		context: ['/user','/product'],
 	      	target: 'http://127.0.0.1:3000',
 	    }]
 	}			

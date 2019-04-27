@@ -1,7 +1,7 @@
 <div class="swiper-wrapper">
 	{{#swiper}}	
 	    <div class="swiper-slide">
-	    	<a href="./list.html?categoryId={{categorId}}">
+	    	<a href="./list.html?categoryId={{categoryId}}">
 	    		<img src="{{images}}" alt="" class="carousel-img">
 	    	</a>
 	    </div>

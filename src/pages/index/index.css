@@ -32,6 +32,7 @@
 }
 .focus .swiper-container .carousel-img{
 	height: 440px;
+	width: 100%;
 }
 .focus .swiper-container .swiper-pagination-bullet{
 	width: 15px;

@@ -3,6 +3,7 @@ var Hogan = require('hogan.js')
 
 var _util = {
 	request:function(options){
+		var _this = this;
 		$.ajax({
 			method:options.method || 'get',
 			url:options.url || '',
@@ -20,7 +21,7 @@ var _util = {
 				//没有权限
 				else if(result.code == 10){
 					//跳转到登陆页面
-					window.location.herf = ('./user-login')
+					_this.goLogin();
 				}
 			},
 			error:function(err){
@@ -35,7 +36,7 @@ var _util = {
 		alert(msg)
 	},
 	goLogin:function(){
-		window.location.href = './user-login.html'
+		window.location.href = './user-login.html?redirect='+window.location.href
 	},
 	goHome:function(){
 		window.location.href = '/'
