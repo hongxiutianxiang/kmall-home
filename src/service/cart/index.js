@@ -18,7 +18,13 @@ var _cart = {
 			error:error
 		})
 	},
-	
+	getCart:function(success,error){
+		_util.request({
+			url:'/cart',
+			success:success,
+			error:error
+		})
+	}
 	
 }
 

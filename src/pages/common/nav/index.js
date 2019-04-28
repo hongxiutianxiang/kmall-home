@@ -3,12 +3,14 @@ require('./index.css')
 
 var _user = require('service/user')
 var _util = require('util/index.js')
+var _cart = require('service/cart')
 
 var nav = {
 	init:function(){
 
 		this.bindEvent();
 		this.loadUsername();
+		this.loadCartCount();
 
 		return this;
 	},
@@ -33,6 +35,13 @@ var nav = {
 			.show()
 			.find('.username')
 			.text(data.username)
+		})
+	},
+	loadCartCount:function(){
+		_cart.getCartCount(function(count){
+			$('.nav-list .cart-num').text(count) || 0
+		},function(){
+			$('.nav-list .cart-num').text(0) 
 		})
 	}
 }

@@ -46,11 +46,19 @@ var page = {
 	},
 	bindEvent:function(){
 		var _this = this;
+		//1.图片切换
+		this.$elem.on('mouseenter','.product-small-img-item',function(){
+			var $this = $(this)
+			$this.addClass('active')
+			.siblings('.product-small-img-item').removeClass('active');
 
+			var imgSrc = $this.find('img').attr('src')
+			$('.product-main-img img').attr('src',imgSrc)
+		})
 
 
 		//2.处理商品数量
-		this.$elem.on('click','.count-input',function(){
+		this.$elem.on('click','.count-btn',function(){
 			var $this = $(this);
 			var $input = $('.count-input');
 			var current = parseInt($input.val());

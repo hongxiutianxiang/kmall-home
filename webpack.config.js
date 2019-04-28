@@ -37,6 +37,7 @@ module.exports = {
 		'list':'./src/pages/list/index.js',		
 		'user-update-password':'./src/pages/user-update-password/index.js',	
 		'detail':'./src/pages/detail/index.js',	
+		'cart':'./src/pages/cart/index.js',	
 	},
 	//单入口写法二
 	//entry: './src/index.js',
@@ -117,6 +118,7 @@ module.exports = {
 	    new htmlWebpackPlugin(getHtmlConfig('list','商品列表')),
 	    new htmlWebpackPlugin(getHtmlConfig('user-update-password','修改密码')),
 	    new htmlWebpackPlugin(getHtmlConfig('detail','商品详情')),
+	    new htmlWebpackPlugin(getHtmlConfig('cart','购物车')),
 
 	    new CleanWebpackPlugin(),
 	    new MiniCssExtractPlugin({
