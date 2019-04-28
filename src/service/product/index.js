@@ -10,6 +10,15 @@ var _product = {
 			error:error
 		})
 	},
+	getProductDetail:function(data,success,error){
+		_util.request({
+			url:'/product/home/detail',
+			data:data,
+			success:success,
+			error:error
+		})
+	},
+	
 	
 }
 

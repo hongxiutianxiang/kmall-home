@@ -10,20 +10,20 @@
 	box-sizing: border-box;
 	margin-right: 10px;
 }
-.keywords .keyowrd-item{
+.keywords .keyword-item{
 	padding:0 10px;
 	height: 40px;
 	line-height: 40px;
 }
-.keywords .keyowrd-item:hover{
+.keywords .keyword-item:hover{
 	background-color: #666;
 }
-.keywords .keyowrd-item .link{
+.keywords .keyword-item .link{
 	color: #fff;
 	font-size: 14px;
 	margin-right: 5px;
 }
-.keywords .keyowrd-item .link:hover{
+.keywords .keyword-item .link:hover{
 	color: #f21;
 }
 

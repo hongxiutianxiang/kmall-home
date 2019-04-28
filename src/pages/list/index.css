@@ -1,3 +1,6 @@
+.crumb{
+	margin-bottom: 10px;
+}
 .sort{
 	margin-bottom: 20px;
 }
@@ -68,4 +71,9 @@
 	overflow: hidden;
     text-overflow: ellipsis;
     padding: 0px 10px;	
+}
+.some{
+	color: #ff6755;
+	font-size: 24px;
+	margin: 100px auto;
 }
