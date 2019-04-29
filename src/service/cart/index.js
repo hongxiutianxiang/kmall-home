@@ -24,7 +24,19 @@ var _cart = {
 			success:success,
 			error:error
 		})
-	}
+	},
+
+
+
+
+	updateCart:function(success,error){
+		_util.request({
+			url:'/cart',
+			success:success,
+			error:error
+		})
+	},
+
 	
 }
 

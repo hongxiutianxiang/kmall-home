@@ -17,6 +17,7 @@ var page = {
 		keyword:_util.getParamFromUrl('keyword') || '',
 		categoryId:_util.getParamFromUrl('categoryId') || '',
 		orderBy:_util.getParamFromUrl('orderBy') || 'default',
+		page:_util.getParamFromUrl('page') || 1,
 	},
 	init:function(){
 		this.initPagination();
@@ -24,8 +25,13 @@ var page = {
 		this.bindEvent();
 	},
 	initPagination:function(){
+		var _this = this
 		this.$pagination = $('.pagination-box');
-		this.$pagination.Pagination();
+		this.$pagination.on('page-change',function(ev,value){
+			_this.listParam.page = value;
+			_this.loadProductList();
+		})
+		this.$pagination.pagination();
 	},
 	bindEvent:function(){
 		//绑定排序事件
@@ -56,6 +62,7 @@ var page = {
 					_this.listParam.orderBy = 'price_asc'
 				}
 			}
+			_this.listParam.page = 1;
 			_this.loadProductList();
 		})
 	},
@@ -75,7 +82,7 @@ var page = {
 				$('.product-list-box').html(html)	
 			
 				//调用分页组件
-				_this.$pagination.Pagination('render',{
+				_this.$pagination.pagination('render',{
 					current:result.current,
 					total:result.total,
 					pageSize:result.pageSize,

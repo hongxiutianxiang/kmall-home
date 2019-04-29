@@ -38,6 +38,7 @@ module.exports = {
 		'user-update-password':'./src/pages/user-update-password/index.js',	
 		'detail':'./src/pages/detail/index.js',	
 		'cart':'./src/pages/cart/index.js',	
+		'order-confirm':'./src/pages/order-confirm/index.js',
 	},
 	//单入口写法二
 	//entry: './src/index.js',
@@ -119,6 +120,7 @@ module.exports = {
 	    new htmlWebpackPlugin(getHtmlConfig('user-update-password','修改密码')),
 	    new htmlWebpackPlugin(getHtmlConfig('detail','商品详情')),
 	    new htmlWebpackPlugin(getHtmlConfig('cart','购物车')),
+	    new htmlWebpackPlugin(getHtmlConfig('order-confirm','订单确认')),
 
 	    new CleanWebpackPlugin(),
 	    new MiniCssExtractPlugin({
@@ -129,7 +131,7 @@ module.exports = {
 		contentBase: './dist',//内容的目录
 		port:3002,//服务运行的端口
 		proxy: [{
-      		context: ['/user','/product','/cart'],
+      		context: ['/user','/product','/cart','/order'],
 	      	target: 'http://127.0.0.1:3000',
 	    }]
 	}			
