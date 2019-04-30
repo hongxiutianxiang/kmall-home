@@ -9,6 +9,8 @@ require('./index.css')
 
 var _util = require('util')
 var _order = require('service/order')
+var _shipping = require('service/shipping')
+var _modal = require('./modal.js')
 var shippingTpl = require('./shipping.tpl')
 var productTpl = require('./product.tpl')
 
@@ -26,10 +28,34 @@ var page = {
 	},
 	bindEvent:function(){
 		var _this = this;
+		//1.弹出地址框
+		this.$shippingBox.on('click','.shipping-add',function(){
+			_modal.show()
+		})
+
+		//2.删除地址
+		this.$shippingBox.on('click','.shipping-delete',function(){
+			
+		})
+
+		//3.编辑地址
 			
 	},
 	loadShipping:function(){
+		var _this = this;
+		_shipping.getShippingList(function(shippings){
+			_this.renderShipping(shippings)
+		},function(msg){
+			_util.showErrorMsg(msg)
+		})
 
+
+	},
+	renderShipping:function(shippings){
+		var html = _util.render(shippingTpl,{
+			shippings:shippings
+		})
+		this.$shippingBox.html(html)
 	},
 	loadProductList:function(){
 		var _this = this

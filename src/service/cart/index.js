@@ -25,13 +25,62 @@ var _cart = {
 			error:error
 		})
 	},
-
-
-
-
-	updateCart:function(success,error){
+	selectOne:function(data,success,error){
 		_util.request({
-			url:'/cart',
+			url:'/cart/selectOne',
+			method:'put',
+			data:data,
+			success:success,
+			error:error
+		})
+	},
+	unselectOne:function(data,success,error){
+		_util.request({
+			url:'/cart/unselectOne',
+			method:'put',
+			data:data,
+			success:success,
+			error:error
+		})
+	},
+	selectAll:function(success,error){
+		_util.request({
+			url:'/cart/selectAll',
+			method:'put',
+			success:success,
+			error:error
+		})
+	},
+	unselectAll:function(success,error){
+		_util.request({
+			url:'/cart/unselectAll',
+			method:'put',
+			success:success,
+			error:error
+		})
+	},
+	deleteOne:function(data,success,error){
+		_util.request({
+			url:'/cart/deleteOne',
+			method:'put',
+			data:data,
+			success:success,
+			error:error
+		})
+	},
+	deleteSelected:function(success,error){
+		_util.request({
+			url:'/cart/deleteSelected',
+			method:'put',
+			success:success,
+			error:error
+		})
+	},
+	updateCount:function(data,success,error){
+		_util.request({
+			url:'/cart/updateCount',
+			method:'put',
+			data:data,
 			success:success,
 			error:error
 		})
