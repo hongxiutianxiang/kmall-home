@@ -28,6 +28,9 @@ var page = {
 	},
 	bindEvent:function(){
 		var _this = this;
+		this.$shippingBox.on('get-shippings',function(ev,shippings){
+			_this.renderShipping(shippings)
+		})
 		//1.弹出地址框
 		this.$shippingBox.on('click','.shipping-add',function(){
 			_modal.show()
@@ -52,6 +55,7 @@ var page = {
 
 	},
 	renderShipping:function(shippings){
+		console.log(shippings)
 		var html = _util.render(shippingTpl,{
 			shippings:shippings
 		})

@@ -124,39 +124,24 @@ var _modal = {
 			result.msg = '收货人姓名格式不正确'
 			return result;
 		}
+		//省份不能为空
+		if(!_util.validate(formData.province,'require')){
+			result.msg = '省份不能为空'
+			return result;
+		}
 		//城市不能为空
 		if(!_util.validate(formData.city,'require')){
 			result.msg = '城市不能为空'
 			return result;
 		}
-		//密码格式不正确
-		if(!_util.validate(formData.password,'password')){
-			result.msg = '密码格式不正确'
+		//地址不能为空
+		if(!_util.validate(formData.address,'require')){
+			result.msg = '地址不能为空'
 			return result;
 		}
-		//两次密码不一致
-		if(formData.password != formData.repassword){
-			result.msg = '两次密码不一致'
-			return result;
-		}
-		//手机号不能为空
+		//手机号码不能为空
 		if(!_util.validate(formData.phone,'require')){
-			result.msg = '手机号不能为空'
-			return result;
-		}
-		//手机号格式不正确
-		if(!_util.validate(formData.phone,'phone')){
-			result.msg = '手机号格式不正确'
-			return result;
-		}
-		//邮箱不能为空
-		if(!_util.validate(formData.email,'require')){
-			result.msg = '邮箱不能为空'
-			return result;
-		}
-		//邮箱格式不正确
-		if(!_util.validate(formData.email,'email')){
-			result.msg = '邮箱格式不正确'
+			result.msg = '手机号码不能为空'
 			return result;
 		}
 
