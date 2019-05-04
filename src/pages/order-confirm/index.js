@@ -19,6 +19,7 @@ var page = {
 	init:function(){
 		this.$shippingBox = $('.shipping-box');
 		this.$productBox = $('.product-box');
+		this.selectShippingId = '';
 		this.onload();
 		this.bindEvent();
 	},
@@ -37,11 +38,53 @@ var page = {
 		})
 
 		//2.删除地址
-		this.$shippingBox.on('click','.shipping-delete',function(){
-			
+		this.$shippingBox.on('click','.shipping-delete',function(ev){
+			//阻止冒泡防止点击时选中
+			ev.stopPropagation()
+			if(_util.confirm('你确定要删除这个地址吗？')){
+				var shippingId = $(this).parents('.shipping-item').data('shipping-id')
+				_shipping.deleteShipping({shippingId:shippingId},function(shippings){
+					_this.renderShipping(shippings)
+				},function(msg){
+					_util.showErrorMsg(msg)
+				})
+			}
 		})
 
 		//3.编辑地址
+		this.$shippingBox.on('click','.shipping-edit',function(ev){
+			//阻止冒泡防止点击时选中
+			ev.stopPropagation()
+			var shippingId = $(this).parents('.shipping-item').data('shipping-id')
+			_shipping.getShipping({shippingId:shippingId},function(shipping){
+				_modal.show(shipping)
+			},function(msg){
+				_util.showErrorMsg(msg)
+			})
+		})
+
+		//4.选择地址
+		this.$shippingBox.on('click','.shipping-item',function(){
+			var $this = $(this)
+			$(this).addClass('active')
+			.siblings('.shipping-item').removeClass('active')
+		
+			//保存选中的id
+			_this.selectShippingId = $this.data('shipping-id')
+		})
+
+		//5.去支付
+		this.$productBox.on('click','.btn-submit',function(){
+			if(_this.selectShippingId){
+				_order.createOrder({shippingId:_this.selectShippingId},function(order){
+					window.location.href = './payment.html?orderNo'+order.orderNo
+				},function(msg){
+					_util.showErrorMsg(msg)
+				})
+			}else{
+				_util.showErrorMsg('请选择地址后提交')
+			}
+		})
 			
 	},
 	loadShipping:function(){
@@ -55,7 +98,13 @@ var page = {
 
 	},
 	renderShipping:function(shippings){
-		console.log(shippings)
+		var _this = this
+		//标注被选中的地址
+		shippings.forEach(function(shipping){
+			if(shipping._id == _this.selectShippingId){
+				shipping.active = true;
+			}
+		})
 		var html = _util.render(shippingTpl,{
 			shippings:shippings
 		})

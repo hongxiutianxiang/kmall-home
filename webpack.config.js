@@ -39,6 +39,7 @@ module.exports = {
 		'detail':'./src/pages/detail/index.js',	
 		'cart':'./src/pages/cart/index.js',	
 		'order-confirm':'./src/pages/order-confirm/index.js',
+		'payment':'./src/pages/payment/index.js',
 	},
 	//单入口写法二
 	//entry: './src/index.js',
@@ -121,6 +122,7 @@ module.exports = {
 	    new htmlWebpackPlugin(getHtmlConfig('detail','商品详情')),
 	    new htmlWebpackPlugin(getHtmlConfig('cart','购物车')),
 	    new htmlWebpackPlugin(getHtmlConfig('order-confirm','订单确认')),
+	    new htmlWebpackPlugin(getHtmlConfig('payment','订单支付')),
 
 	    new CleanWebpackPlugin(),
 	    new MiniCssExtractPlugin({
