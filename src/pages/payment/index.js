@@ -15,13 +15,16 @@ var _nav = require('pages/common/nav')
 var tpl = require('./index.tpl')
 
 var page = {
-	
-	init:function(){
-		this.$elem = $('.cart-box');
-		this.loadCart();
-		this.bindEvent();
+	params:{
+		orderNo:_util.getParamFromUrl('orderNo') || ''
 	},
-	
+	init:function(){
+		this.$elem = $('.payment-box');
+		this.loadPaymentInfo();
+	},
+	loadPaymentInfo:function(){
+		
+	}
 	
 	
 }
