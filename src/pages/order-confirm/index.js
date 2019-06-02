@@ -77,7 +77,7 @@ var page = {
 		this.$productBox.on('click','.btn-submit',function(){
 			if(_this.selectShippingId){
 				_order.createOrder({shippingId:_this.selectShippingId},function(order){
-					window.location.href = './payment.html?orderNo'+order.orderNo
+					window.location.href = './payment.html?orderNo='+order.orderNo
 				},function(msg){
 					_util.showErrorMsg(msg)
 				})
