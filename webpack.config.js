@@ -40,6 +40,8 @@ module.exports = {
 		'cart':'./src/pages/cart/index.js',	
 		'order-confirm':'./src/pages/order-confirm/index.js',
 		'payment':'./src/pages/payment/index.js',
+		'order-list':'./src/pages/order-list/index.js',
+		'order-detail':'./src/pages/order-detail/index.js',
 	},
 	//单入口写法二
 	//entry: './src/index.js',
@@ -123,6 +125,8 @@ module.exports = {
 	    new htmlWebpackPlugin(getHtmlConfig('cart','购物车')),
 	    new htmlWebpackPlugin(getHtmlConfig('order-confirm','订单确认')),
 	    new htmlWebpackPlugin(getHtmlConfig('payment','订单支付')),
+	    new htmlWebpackPlugin(getHtmlConfig('order-list','订单列表')),
+	    new htmlWebpackPlugin(getHtmlConfig('order-detail','订单详情')),
 
 	    new CleanWebpackPlugin(),
 	    new MiniCssExtractPlugin({
@@ -133,7 +137,7 @@ module.exports = {
 		contentBase: './dist',//内容的目录
 		port:3002,//服务运行的端口
 		proxy: [{
-      		context: ['/user','/product','/cart','/order','/shipping'],
+      		context: ['/user','/product','/cart','/order','/shipping','/payment'],
 	      	target: 'http://127.0.0.1:3000',
 	    }]
 	}			
