@@ -35,51 +35,51 @@ var page = {
 		{item:[{name:'手机'},{name:'电视'}]},
 	], 
 	swiper:[
-		{images:require('images/carousel/bizhia.jpg'),categoryId:'11'},
-		{images:require('images/carousel/bizhib.jpg'),categoryId:'22'},
-		{images:require('images/carousel/bizhic.jpg'),categoryId:'33'},
-		{images:require('images/carousel/bizhid.jpg'),categoryId:'44'},
-		{images:require('images/carousel/bizhie.jpg'),categoryId:'55'},
+		{images:require('images/carousel/bizhia.jpg'),categoryId:'5cbb135d75406c3f406e7480'},
+		{images:require('images/carousel/bizhib.jpg'),categoryId:'5cbb135d75406c3f406e7480'},
+		{images:require('images/carousel/bizhic.jpg'),categoryId:'5cbb135d75406c3f406e7480'},
+		{images:require('images/carousel/bizhid.jpg'),categoryId:'5cbb135d75406c3f406e7480'},
+		{images:require('images/carousel/bizhie.jpg'),categoryId:'5cbb135d75406c3f406e7480'},
 	],
 	floor:[
 		{
 			title:'F1 手机',
 			item:[
-				{text:'手机',image:require('images/floor/f1-1.jpg'),categoryId:'11'},
-				{text:'手机',image:require('images/floor/f1-2.jpg'),categoryId:'11'},
-				{text:'手机',image:require('images/floor/f1-3.jpg'),categoryId:'11'},
-				{text:'手机',image:require('images/floor/f1-4.jpg'),categoryId:'11'},
-				{text:'手机',image:require('images/floor/f1-5.jpg'),categoryId:'11'},
+				{text:'手机',image:require('images/floor/f1-1.jpg'),categoryId:'5cbad58475406c3f406e747c'},
+				{text:'手机',image:require('images/floor/f1-2.jpg'),categoryId:'5cbad58475406c3f406e747c'},
+				{text:'手机',image:require('images/floor/f1-3.jpg'),categoryId:'5cbad58475406c3f406e747c'},
+				{text:'手机',image:require('images/floor/f1-4.jpg'),categoryId:'5cbad58475406c3f406e747c'},
+				{text:'手机',image:require('images/floor/f1-5.jpg'),categoryId:'5cbad58475406c3f406e747c'},
 			]
 		},
 		{
 			title:'F2 电脑',
 			item:[
-				{text:'手机',image:require('images/floor/f2-1.jpg'),categoryId:'11'},
-				{text:'手机',image:require('images/floor/f2-2.jpg'),categoryId:'11'},
-				{text:'手机',image:require('images/floor/f2-3.jpg'),categoryId:'11'},
-				{text:'手机',image:require('images/floor/f2-4.jpg'),categoryId:'11'},
-				{text:'手机',image:require('images/floor/f2-5.jpg'),categoryId:'11'},
+				{text:'手机',image:require('images/floor/f2-1.jpg'),categoryId:'5cbad68f75406c3f406e747d'},
+				{text:'手机',image:require('images/floor/f2-2.jpg'),categoryId:'5cbad68f75406c3f406e747d'},
+				{text:'手机',image:require('images/floor/f2-3.jpg'),categoryId:'5cbad68f75406c3f406e747d'},
+				{text:'手机',image:require('images/floor/f2-4.jpg'),categoryId:'5cbad68f75406c3f406e747d'},
+				{text:'手机',image:require('images/floor/f2-5.jpg'),categoryId:'5cbad68f75406c3f406e747d'},
 			]
 		},
 		{
 			title:'F3 手机',
 			item:[
-				{text:'手机',image:require('images/floor/f1-1.jpg'),categoryId:'11'},
-				{text:'手机',image:require('images/floor/f1-2.jpg'),categoryId:'11'},
-				{text:'手机',image:require('images/floor/f1-3.jpg'),categoryId:'11'},
-				{text:'手机',image:require('images/floor/f1-4.jpg'),categoryId:'11'},
-				{text:'手机',image:require('images/floor/f1-5.jpg'),categoryId:'11'},
+				{text:'手机',image:require('images/floor/f1-1.jpg'),categoryId:'5cbad75a75406c3f406e747e'},
+				{text:'手机',image:require('images/floor/f1-2.jpg'),categoryId:'5cbad75a75406c3f406e747e'},
+				{text:'手机',image:require('images/floor/f1-3.jpg'),categoryId:'5cbad75a75406c3f406e747e'},
+				{text:'手机',image:require('images/floor/f1-4.jpg'),categoryId:'5cbad75a75406c3f406e747e'},
+				{text:'手机',image:require('images/floor/f1-5.jpg'),categoryId:'5cbad75a75406c3f406e747e'},
 			]
 		},
 		{
 			title:'F4 电脑',
 			item:[
-				{text:'手机',image:require('images/floor/f2-1.jpg'),categoryId:'11'},
-				{text:'手机',image:require('images/floor/f2-2.jpg'),categoryId:'11'},
-				{text:'手机',image:require('images/floor/f2-3.jpg'),categoryId:'11'},
-				{text:'手机',image:require('images/floor/f2-4.jpg'),categoryId:'11'},
-				{text:'手机',image:require('images/floor/f2-5.jpg'),categoryId:'11'},
+				{text:'手机',image:require('images/floor/f2-1.jpg'),categoryId:'5cbb06e075406c3f406e747f'},
+				{text:'手机',image:require('images/floor/f2-2.jpg'),categoryId:'5cbb06e075406c3f406e747f'},
+				{text:'手机',image:require('images/floor/f2-3.jpg'),categoryId:'5cbb06e075406c3f406e747f'},
+				{text:'手机',image:require('images/floor/f2-4.jpg'),categoryId:'5cbb06e075406c3f406e747f'},
+				{text:'手机',image:require('images/floor/f2-5.jpg'),categoryId:'5cbb06e075406c3f406e747f'},
 			]
 		},
 	],
